@@ -1,0 +1,68 @@
+[
+  {
+    "jid": "6281511480762@s.whatsapp.net",
+    "db": [
+      {
+        "nama": "#enu",
+        "count": 2
+      },
+      {
+        "nama": "#dashboard",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "jid": "6287898635798@s.whatsapp.net",
+    "db": [
+      {
+        "nama": "#dashboard",
+        "count": 1
+      },
+      {
+        "nama": "#enu",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "jid": "14247850011@s.whatsapp.net",
+    "db": [
+      {
+        "nama": "#enu",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "jid": "6281242648600@s.whatsapp.net",
+    "db": [
+      {
+        "nama": "#enu",
+        "count": 7
+      },
+      {
+        "nama": "#dashboard",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "jid": "6285752300553@s.whatsapp.net",
+    "db": [
+      {
+        "nama": "#enu",
+        "count": 4
+      }
+    ]
+  },
+  {
+    "jid": "6285299218320@s.whatsapp.net",
+    "db": [
+      {
+        "nama": "#dashboard",
+        "count": 1
+      }
+    ]
+  }
+]
