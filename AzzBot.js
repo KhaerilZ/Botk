@@ -30,8 +30,8 @@ let setting = JSON.parse(fs.readFileSync('./apikey.json'))
 
 //limit
 limitawal = '10'
-botname = 'Khz•Bot🥵'
-wm = '© khz'
+botname = 'KhzBot'
+wm = '© KhzBot'
 
 // read database
 let tebaklagu = db.data.game.tebaklagu = []
@@ -1569,6 +1569,29 @@ zets.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
 break
+case 'dashboard':
+	addCountCmd('#dashboard', sender, _cmd)
+var posi = await getPosiCmdUser(sender, _cmdUser)
+_cmdUser[posi].db.sort((a, b) => (a.count < b.count) ? 1 : -1)
+_cmd.sort((a, b) => (a.count  < b.count) ? 1 : -1)
+var posi = await getPosiCmdUser(sender, _cmdUser)
+var jumlahCmd = _cmd.length
+if (jumlahCmd > 10) jumlahCmd = 10
+var jumlah = _cmdUser[posi].db.length
+if (jumlah > 5) jumlah = 5
+var totalUser = 0
+for (let x of _cmdUser[posi].db) {
+  totalUser = totalUser + x.count
+}
+var total = 0
+for (let o of _cmd) {
+  total = total + o.count
+}
+var teks = `*KHZ BOT DASHBOARD*\n\n*HIT*\n• GLOBAL : ${total}\n• USER : ${totalUser}\n\n`
+teks += `*Most Command Global*\n`
+for (let u = 0; u < jumlahCmd; u ++) {
+  teks += `• ${_cmd[u].nama} : ${_cmd[u].count}\n`
+}
 teks += `\n*Most Command User*\n`
 for (let i = 0; i < jumlah; i ++) {
   teks += `• ${_cmdUser[posi].db[i].nama} : ${_cmdUser[posi].db[i].count}\n`
@@ -2646,8 +2669,8 @@ break
 
 case 'menu': case 'help': case '?': {
 addCountCmd(`#${command.slice(1)}`, sender, _cmd)
-buffer = `https://ibb.co/KWRwr2r`
-anu = `Oyy ${pushname}, Jangko Spamki :)
+buffer = `https://i.ibb.co/nR2RSTC/wlv-CPr-F-1.jpg`
+anu = `*Halo Bro ${pushname}, Janganki Spam Bro :)*
    
 ♕︎ *INFO - BOT*
 ✔︎ *Bot Name:* _${global.botname}_
@@ -2880,7 +2903,7 @@ anu = `Oyy ${pushname}, Jangko Spamki :)
    ⚠︎ ${prefix}setppbot [image]
    ⚠︎ ${prefix}setexif
 `
-var button = [{buttonId: `owner`, buttonText: { displayText: `Owner` }, type: 1 }]
+var button = [{ buttonId: `dashboard`, buttonText: { displayText: `Dashboard` }, type: 1 }, { buttonId: `owner`, buttonText: { displayText: `Owner` }, type: 1 }]
 zets.sendMessage(m.chat, { caption: `${anu}`, location: { jpegThumbnail: await reSize(buffer, 200, 200) }, buttons: button, footer:  botname, mentions: [m.sender] })
 }
 break
