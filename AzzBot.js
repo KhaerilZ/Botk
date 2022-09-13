@@ -31,7 +31,7 @@ let setting = JSON.parse(fs.readFileSync('./apikey.json'))
 //limit
 limitawal = '10'
 botname = 'Khz•Bot🥵'
-wm = '© Khz '
+wm = '© khz'
 
 // read database
 let tebaklagu = db.data.game.tebaklagu = []
@@ -63,7 +63,6 @@ const sender = m.sender
 const quoted = m.quoted ? m.quoted : m
 const mime = (quoted.msg || quoted).mimetype || ''
 	const isMedia = /image|video|sticker|audio/.test(mime)
-const { tiktokdl, tiktokdlv2, tiktokdlv3 } = require('@bochilteam/scraper')
 	
 // Group
 const groupMetadata = m.isGroup ? await zets.groupMetadata(m.chat).catch(e => {}) : ''
@@ -734,13 +733,6 @@ hadiah: 6,
 }
 }
 break
-case 'khaeril':
-    if (!args[0]) throw `Link tiktoknya mana?\n\ncontoh:\n.tiktok https://vm.tiktok.com/ZGJAmhSrp/`
-    tiktokdlv3(args[0]).then(r => {
-    let video = r.video.no_watermark
-    zets.sendFile(m.chat, video, '', `*Khaeril!*`, m)
-    })
-}break  
 case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
 if (!m.quoted && !text) throw `Kirim/reply text dengan caption ${prefix + command}`
 ter = command[1].toLowerCase()
@@ -889,8 +881,7 @@ key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
 }
 zets.sendMessage(m.chat, reactionMessage)
 }
-break
-  
+break  
 case 'join': {
 if (!isCreator) throw mess.owner
 if (!text) throw 'Masukkan Link Group!'
@@ -2678,17 +2669,14 @@ break
 
 case 'menu': case 'help': case '?': {
 addCountCmd(`#${command.slice(1)}`, sender, _cmd)
-buffer = `https://i.postimg.cc/PxTQPVrz/null-20220821-WA0032.jpg`
-anu = `Hai kak ${pushname}, have a nice day:)
+anu = `Oy ${pushname}, jangko spamki :)
    
 ♕︎ *INFO - BOT*
 ✔︎ *Bot Name:* _${global.botname}_
 ✔︎ *Owner Name:* _${global.ownername}_
-✔︎ *Runtime:* _${runtime(process.uptime())}_
 ✔︎ *Gc Bot:* _${global.gc}_
-✔︎ *Tanggal:* _${moment.tz('Asia/Jakarta').format('DD/MM/YY')}_
-✔︎ *Waktu:* _${moment.tz('Asia/Jakarta').format('HH:mm:ss')}_ 
-✔︎ *Library:* _Baileys-Md_
+✔︎ *Tanggal:* _${moment.tz('Asia/Makassar').format('DD/MM/YY')}_
+✔︎ *Waktu:* _${moment.tz('Asia/Makassar').format('HH:mm:ss')}_ 
 
 ♕︎ *Group*
    ⚠︎ ${prefix}linkgroup
@@ -2713,7 +2701,6 @@ anu = `Hai kak ${pushname}, have a nice day:)
    ⚠︎ ${prefix}hapusvote
 
 ♕︎ *Downloader*
-   ⚠︎ ${prefix}tiktok [url]
    ⚠︎ ${prefix}instagram [url]
    ⚠︎ ${prefix}twitter [url]
    ⚠︎ ${prefix}twittermp3 [url]
