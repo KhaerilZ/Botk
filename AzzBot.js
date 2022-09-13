@@ -63,6 +63,7 @@ const sender = m.sender
 const quoted = m.quoted ? m.quoted : m
 const mime = (quoted.msg || quoted).mimetype || ''
 	const isMedia = /image|video|sticker|audio/.test(mime)
+const { tiktokdl, tiktokdlv2, tiktokdlv3 } = require('@bochilteam/scraper')
 	
 // Group
 const groupMetadata = m.isGroup ? await zets.groupMetadata(m.chat).catch(e => {}) : ''
@@ -733,6 +734,13 @@ hadiah: 6,
 }
 }
 break
+case 'khaeril':
+    if (!args[0]) throw `Link tiktoknya mana?\n\ncontoh:\n.tiktok https://vm.tiktok.com/ZGJAmhSrp/`
+    tiktokdlv3(args[0]).then(r => {
+    let video = r.video.no_watermark
+    zets.sendFile(m.chat, video, '', `*Khaeril!*`, m)
+    })
+}break  
 case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
 if (!m.quoted && !text) throw `Kirim/reply text dengan caption ${prefix + command}`
 ter = command[1].toLowerCase()
@@ -881,7 +889,8 @@ key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
 }
 zets.sendMessage(m.chat, reactionMessage)
 }
-break  
+break
+  
 case 'join': {
 if (!isCreator) throw mess.owner
 if (!text) throw 'Masukkan Link Group!'
