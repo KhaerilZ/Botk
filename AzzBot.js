@@ -2902,7 +2902,7 @@ anu = `Oy ${pushname}, jangko spamki :)
    ⚠︎ ${prefix}setexif
 `
 var button = [{ buttonId: `dashboard`, buttonText: { displayText: `Dashboard` }, type: 1 }, { buttonId: `owner`, buttonText: { displayText: `Owner` }, type: 1 }]
-zets.sendMessage(m.chat, { caption: `${anu}`, location: { jpegThumbnail: await reSize(buffer, 200, 200) }, buttons: button, footer:  botname, mentions: [m.sender] })
+zets.sendMessage(m.chat, { caption: `${anu}`, location: buttons: button, footer:  botname, mentions: [m.sender] })
 }
 break
 //────────────────────[ BATAS TEMAN ]────────────────────
